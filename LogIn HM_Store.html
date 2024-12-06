@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -9,12 +8,11 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            /* إضافة صورة خلفية مع التوافق التام مع جميع الشاشات */
             background: url('https://i.postimg.cc/tJ5922mz/DALL-E-2024-12-05-18-11-03-A-stylish-and-modern-background-design-for-a-clothing-website-called-H.webp') no-repeat center center fixed;
-            background-size: cover;  /* تأكد من أن الصورة تغطي كامل الخلفية */
-            background-position: center center; /* لضمان محاذاة الصورة في المركز */
-            background-attachment: fixed;  /* يجعل الصورة ثابتة أثناء التمرير */
-            min-height: 100vh;  /* لضمان أن الصورة تغطي الشاشة بالكامل */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,13 +20,12 @@
         }
 
         .login-card {
-            background: rgba(255, 255, 255, 0.8); /* خلفية شفافة للنموذج */
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             padding: 40px;
             width: 100%;
-            max-width: 450px;  /* تحديد الحد الأقصى للعرض */
-            height: auto;  /* يمكن تعديل الارتفاع حسب الحاجة */
+            max-width: 450px;
         }
 
         h4 {
@@ -70,22 +67,19 @@
             background-color: #0A1A55;
         }
 
-       
-
-        /* تخصيص الاستجابة للأحجام المختلفة */
         @media (max-width: 768px) {
             .login-card {
-                width: 90%;  /* عرض النموذج على الشاشات الصغيرة */
+                width: 90%;
             }
         }
         
         @media (max-width: 480px) {
             .login-card {
-                width: 95%;  /* زيادة العرض ليشمل معظم الشاشات الصغيرة جداً */
+                width: 95%;
             }
 
             h4 {
-                font-size: 1.5rem;  /* تقليل حجم العنوان على الشاشات الصغيرة */
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -103,20 +97,24 @@
                 <input type="password" id="password" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
-            <a href="https://hassanmo2004.github.io/Admin/LogIn%20HM_Store" target="_self">Logoin</a>
-
         </form>
     </div>
 
-   
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // منع إرسال النموذج بشكل افتراضي
 
-   <script>
-    document.getElementById('login-form').addEventListener('submit', function(e) {
-        e.preventDefault(); // منع إرسال النموذج بشكل افتراضي
+            // التوجيه إلى الموقع الخاص بك بعد تسجيل الدخول
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
-        // التوجيه إلى الموقع الخاص بك بعد تسجيل الدخول
-        window.location.href = 'https://hassanmo2004.github.io/DashBoard/DashBoard%20HM_Store'; // ضع هنا رابط موقعك
-    });
-</script>
+            // تحقق من اسم المستخدم وكلمة المرور (يمكنك استبدال هذا الجزء بالتحقق من قاعدة بيانات)
+            if (username === 'admin' && password === '1234') {
+                window.location.href = 'https://hassanmo2004.github.io/DashBoard/DashBoard%20HM_Store'; // ضع هنا رابط موقعك
+            } else {
+                alert('Invalid username or password'); // رسالة في حالة الخطأ
+            }
+        });
+    </script>
 </body>
 </html>
